@@ -12,6 +12,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 // app router
 const appRoutes = [
+	// home
+	{ path: '', component: AppComponent },
 
 	// 404 not found
 	{ path: '404', component: NotFoundComponent },
@@ -26,7 +28,8 @@ const appRoutes = [
 		NotFoundComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		RouterModule.forRoot( appRoutes ),
 	],
 	providers: [
 		{ provide: RouteReuseStrategy, useClass: MaltsevRouteReuseStrategy },
