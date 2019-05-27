@@ -1,9 +1,20 @@
-// this file contains commonly reused variables, extensibles, and mixins
+// Commonly reused variables, extensibles, and mixins
+
+
 
 // 3-color gradient background; an angle must be given
 // $color1 is used as a backup, in case linear-gradient() is not supported
 @mixin gradient-bg ($angle, $color1, $color2, $color3) {
 	background: $color1;		// fallback for old browsers
-	background: -webkit-linear-gradient($direction, $color1, $color2, $color3);
-	background: linear-gradient($direction, $color1, $color2, $color3);
+	background: -webkit-linear-gradient($angle, $color1, $color2, $color3);
+	background: linear-gradient($angle, $color1, $color2, $color3);
+}
+
+
+
+// for elements where we want no margin, padding, or border
+%no-margin-padding {
+	margin: 0;
+	padding: 0;
+	border: none;
 }
