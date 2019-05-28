@@ -3,6 +3,18 @@
 @import '~src/assets/scss/common';
 @import '~src/assets/scss/consts';
 
-html {
+div.full-height {
 	@include gradient-bg ($default-grad-angle, $grad-color-1, $grad-color-2, $grad-color-3);
+	@extend %no-margin-padding;
+}
+
+
+div.splash {
+	min-height: inherit;		// inherit from full-height (100vh)
+	font-size: 1.35rem;
+	color: #fff;
+
+	// children
+	svg { @include svg-fill-stroke(#fff); }
+	h1 { font-weight: 300; font-size: 4.20em; }	// blaze it
 }

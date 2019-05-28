@@ -13,6 +13,8 @@
 :root { 
 	@extend %no-margin-padding;
 	min-height: 100%;
+	font-size: 16px;				// baseline font size
+	font-family: "Open Sans", 'Segoe UI', Tahoma, Verdana, sans-serif;
 
 	// use the line below to apply a gradient to a full-height element/page
 	// @include gradient-bg ($default-grad-angle, $grad-color-1, $grad-color-2, $grad-color-3);

@@ -18,3 +18,22 @@
 	padding: 0;
 	border: none;
 }
+
+
+.full-height { min-height: 100vh; }
+
+// column flexbox
+.column-flex { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+// svg fill & stroke
+@mixin svg-fill-stroke($color) {
+	color: $color;
+	stroke: $color;
+	fill: $color;
+}
