@@ -13,8 +13,16 @@
 :root { 
 	@extend %no-margin-padding;
 	min-height: 100%;
-	font-size: 16px;				// baseline font size
-	font-family: "Open Sans", 'Segoe UI', Tahoma, Verdana, sans-serif;
+	font-family: $default-font-family;
+	
+	// responsive font size
+	font-size: 12px;			// small screens, < 767px
+	@media screen and (min-width: 768px) and (max-width: 1280px) {
+		font-size: 15px;
+	}
+	@media screen and (min-width: 1281px) {
+		font-size: 18px;		// large screens
+	}
 
 	// use the line below to apply a gradient to a full-height element/page
 	// @include gradient-bg ($default-grad-angle, $grad-color-1, $grad-color-2, $grad-color-3);
@@ -128,6 +136,7 @@ body {
     url('assets/fonts/open-sans-v15-latin-700.woff') format('woff');
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 
 
 

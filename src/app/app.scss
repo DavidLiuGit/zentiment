@@ -2,6 +2,8 @@
 
 @import '~src/assets/scss/common';
 @import '~src/assets/scss/consts';
+@import '~src/assets/scss/animations';
+
 
 div.full-height {
 	@include gradient-bg ($default-grad-angle, $grad-color-1, $grad-color-2, $grad-color-3);
@@ -11,10 +13,32 @@ div.full-height {
 
 div.splash {
 	min-height: inherit;		// inherit from full-height (100vh)
-	font-size: 1.35rem;
+	font-size: 1.25rem;
 	color: #fff;
+	transition: all 0.5s ease-in-out;
 
 	// children
-	svg { @include svg-fill-stroke(#fff); }
+	svg { 
+		@include svg-fill-stroke(#fff); 
+		height: 12em;
+		max-height: 40vh;
+	}
 	h1 { font-weight: 300; font-size: 4.20em; }	// blaze it
+	h2 { font-weight: 300; font-size: 2em; color: #eee; }
+	h1, h2, h3 { margin: 0.25em 0; }
+
+	button {
+		color: #fff;
+		background: none;
+		border: 1px solid #eee;
+		margin: 0.25em;
+		padding: 0.25em;
+		width: 8em;
+		max-width: 40vw;
+		font-family: $default-font-family;
+
+		font-size: 1.25em;
+		font-weight: 400;
+		transition: all 0.25s ease-in-out;
+	}
 }
