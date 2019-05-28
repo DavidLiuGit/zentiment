@@ -18,6 +18,7 @@ Smart journal
 ## Usage
 
 
+---
 ## Dev installation
 
 ### Dependencies
@@ -28,3 +29,6 @@ Install Flask, Flask-PyMongo with pip:
 ```bash
 pip install -U Flask Flask-PyMongo
 ```
+
+
+## Development
