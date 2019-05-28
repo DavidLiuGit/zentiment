@@ -1,0 +1,221 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+// imports
+@import 'assets/scss/common';
+@import 'assets/scss/consts';
+
+/*****************************************************
+**** GLOBAL
+******************************************************/
+
+:root { 
+	@extend %no-margin-padding;
+	min-height: 100%;
+	font-size: 16px;				// baseline font size
+	font-family: "Open Sans", 'Segoe UI', Tahoma, Verdana, sans-serif;
+
+	// use the line below to apply a gradient to a full-height element/page
+	// @include gradient-bg ($default-grad-angle, $grad-color-1, $grad-color-2, $grad-color-3);
+}
+
+body {
+	// @include gradient-bg ($default-grad-angle, $grad-color-1, $grad-color-2, $grad-color-3);
+	
+	@extend %no-margin-padding;		// use 0 margin & padding
+}
+
+
+
+/*****************************************************
+**** TIMED ANIMATIONS
+******************************************************/
+
+/* animation delay presets */
+.delay-0-1{animation-delay:0.1s !important;}
+.delay-0-2{animation-delay:0.2s !important;}
+.delay-0-3{animation-delay:0.3s !important;}
+.delay-0-4{animation-delay:0.4s !important;}
+.delay-0-5{animation-delay:0.5s !important;}
+.delay-0-6{animation-delay:0.6s !important;}
+.delay-0-7{animation-delay:0.7s !important;}
+.delay-0-8{animation-delay:0.8s !important;}
+.delay-0-9{animation-delay:0.9s !important;}
+.delay-1-0{animation-delay:1s !important;}
+
+/* fade-in animations */
+.fade-in {
+	opacity:0;
+	animation: fadeIn 0.5s ease-in-out forwards;
+}
+.fade-in-up {
+	opacity:0;
+	transform: translateY(30px);
+	animation: fadeInY 0.5s ease-in-out forwards; 
+}
+.fade-in-down{
+	opacity:0;
+	transform: translateY(-30px);
+	animation: fadeInY 0.5s ease-in-out forwards;
+}
+.fade-in-left {
+	opacity: 0;
+	transform: translateX(-30px);
+	animation: fadeInX 0.5s ease-in-out forwards;
+}
+.fade-in-right {
+	opacity: 0;
+	transform: translateX(30px);
+	animation: fadeInX 0.5s ease-in-out forwards;
+}
+@keyframes fadeIn { to {opacity:1}}
+@keyframes fadeInY {
+	to { 
+		opacity:1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeInX {
+	to { 
+		opacity:1;
+		transform: translateX(0);
+	}
+}
+
+
+
+/*****************************************************
+**** FONTS
+******************************************************/
+
+/* open-sans-300 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url('assets/fonts/open-sans-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('assets/fonts/open-sans-v15-latin-300.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-regular - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('assets/fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('assets/fonts/open-sans-v15-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-600 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url('assets/fonts/open-sans-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('assets/fonts/open-sans-v15-latin-600.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-700 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('assets/fonts/open-sans-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('assets/fonts/open-sans-v15-latin-700.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+
+/*****************************************************
+**** TOOLTIPS
+******************************************************/
+
+[tooltip]{
+	margin:20px 60px;
+	position:relative;
+	display:inline-block;
+	/* transition: all 0.25s ease-in-out; */
+  }
+[tooltip]::before {
+	content: "";
+	position: absolute;
+	top:-6px;
+	left:50%;
+	transform: translateX(-50%);
+	border-width: 4px 6px 0 6px;
+	border-style: solid;
+	border-color: #000 transparent transparent     transparent;
+	z-index: 99;
+	opacity:0;
+}
+
+[tooltip-position='left']::before{
+	left:0%;
+	top:50%;
+	margin-left:-12px;
+	transform:translatey(-50%) rotate(-90deg) 
+}
+[tooltip-position='top']::before{
+	left:50%;
+}
+[tooltip-position='bottom']::before{
+	top:100%;
+	margin-top:8px;
+	transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+}
+[tooltip-position='right']::before{
+	left:100%;
+	top:50%;
+	margin-left:1px;
+	transform:translatey(-50%) rotate(90deg)
+}
+
+[tooltip]::after {
+	content: attr(tooltip);
+	position: absolute;
+	left:50%;
+	top:-6px;
+	transform: translateX(-50%)   translateY(-100%);
+	background: #000;
+	text-align: center;
+	color: #fff;
+	padding:4px 2px;
+	font-size: 12px;
+	min-width: 80px;
+	border-radius: 5px;
+	pointer-events: none;
+	padding: 4px 4px;
+	z-index:99;
+	opacity:0;
+}
+
+[tooltip-position='left']::after{
+	left:0%;
+	top:50%;
+	margin-left:-8px;
+	transform: translateX(-100%)   translateY(-50%);
+}
+[tooltip-position='top']::after{
+	left:50%;
+}
+[tooltip-position='bottom']::after{
+	top:100%;
+	margin-top:8px;
+	transform: translateX(-50%) translateY(0%);
+}
+[tooltip-position='right']::after{
+	left:100%;
+	top:50%;
+	margin-left:8px;
+	transform: translateX(0%)   translateY(-50%);
+}
+
+[tooltip]:hover::after,[tooltip]:hover::before {
+	opacity:0.75;
+}

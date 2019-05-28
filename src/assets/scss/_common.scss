@@ -1,0 +1,39 @@
+// Commonly reused variables, extensibles, and mixins
+
+
+
+// 3-color gradient background; an angle must be given
+// $color1 is used as a backup, in case linear-gradient() is not supported
+@mixin gradient-bg ($angle, $color1, $color2, $color3) {
+	background: $color1;		// fallback for old browsers
+	background: -webkit-linear-gradient($angle, $color1, $color2, $color3);
+	background: linear-gradient($angle, $color1, $color2, $color3);
+}
+
+
+
+// for elements where we want no margin, padding, or border
+%no-margin-padding {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+
+.full-height { min-height: 100vh; }
+
+// column flexbox
+.column-flex { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+// svg fill & stroke
+@mixin svg-fill-stroke($color) {
+	color: $color;
+	stroke: $color;
+	fill: $color;
+}

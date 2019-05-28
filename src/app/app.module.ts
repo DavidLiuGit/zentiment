@@ -1,16 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// my imports
 import { AppComponent } from './app.component';
+import { MaltsevRouteReuseStrategy } from './utils/reuse-strategy-2';
+import { RouterModule, RouteReuseStrategy } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SplashComponent } from './splash.component';
+
+
+
+
+// app router
+const appRoutes = [
+	// home
+	{ path: '', component: SplashComponent },
+
+	// 404 not found
+	{ path: '404', component: NotFoundComponent },
+	{ path: '**', redirectTo: '404' },
+]
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		NotFoundComponent,
+		SplashComponent
+	],
+	imports: [
+		BrowserModule,
+		RouterModule.forRoot( appRoutes ),
+	],
+	providers: [
+		{ provide: RouteReuseStrategy, useClass: MaltsevRouteReuseStrategy },
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

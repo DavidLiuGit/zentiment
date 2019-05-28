@@ -1,27 +1,34 @@
 # Zentiment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+Smart journal
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Smart
+* Uses NLP to analyze the contents of your journal
+  * Uses NLP data to determine your mood. Assign a score for you day based on mood.
+  * Extract keywords and entities and highlight them
+* By The Numbers
+  * Look back at your past graphically with charts
 
-## Code scaffolding
+### Secure
+* All data is kept encrypted
+* 2-FA available
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+---
+## Dev installation
 
-## Running unit tests
+### Dependencies
+Zentiment uses a typically client-server-database architecture. The client-facing frontend is built on the [Angular](https://angular.io) framework. The server is built on the Flask framework for Python. The database is MongoDB, which the server will interface with.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Server
+Install Flask, Flask-PyMongo with pip:
+```bash
+pip install -U Flask Flask-PyMongo
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Development
