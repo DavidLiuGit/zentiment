@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MaltsevRouteReuseStrategy } from './utils/reuse-strategy-2';
 import { RouterModule, RouteReuseStrategy } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './not-found.component';
 import { SplashComponent } from './splash.component';
 
 

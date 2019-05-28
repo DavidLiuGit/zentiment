@@ -16,6 +16,7 @@ div.splash {
 	font-size: 1.25rem;
 	color: #fff;
 	transition: all 0.5s ease-in-out;
+	text-align: center;
 
 	// children
 	svg { 
@@ -24,18 +25,20 @@ div.splash {
 		max-height: 40vh;
 	}
 	h1 { font-weight: 300; font-size: 4.20em; }	// blaze it
-	h2 { font-weight: 300; font-size: 2em; color: #eee; }
+	h2 { font-weight: 300; font-size: 2em; color: $default-color-offwhite; }
 	h1, h2, h3 { margin: 0.25em 0; }
+	p { font-size: 1.25em; color: $default-color-offwhite; }
 
 	button {
 		color: #fff;
 		background: none;
-		border: 1px solid #eee;
+		border: 1px solid $default-color-offwhite;
 		margin: 0.25em;
 		padding: 0.25em;
 		width: 8em;
 		max-width: 40vw;
 		font-family: $default-font-family;
+		cursor: pointer;
 
 		font-size: 1.25em;
 		font-weight: 400;
