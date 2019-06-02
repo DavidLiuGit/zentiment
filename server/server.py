@@ -15,4 +15,7 @@ mongo = PyMongo(app)
 test_mongo_connection(mongo)		# test connection; raise exception if failed
 
 
+# Register blueprints to app
 app.run()
+
+
