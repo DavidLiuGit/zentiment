@@ -7,6 +7,8 @@ import { MaltsevRouteReuseStrategy } from './utils/reuse-strategy-2';
 import { RouterModule, RouteReuseStrategy } from '@angular/router';
 import { NotFoundComponent } from './not-found.component';
 import { SplashComponent } from './splash.component';
+import { HomeComponent } from './home/home.component';
+import { AlertComponent } from './utils/alert/alert.component';
 
 
 
@@ -15,6 +17,7 @@ import { SplashComponent } from './splash.component';
 const appRoutes = [
 	// home
 	{ path: '', component: SplashComponent },
+	{ path: 'dashboard', component: HomeComponent },
 
 	// 404 not found
 	{ path: '404', component: NotFoundComponent },
@@ -27,7 +30,9 @@ const appRoutes = [
 	declarations: [
 		AppComponent,
 		NotFoundComponent,
-		SplashComponent
+		SplashComponent,
+		HomeComponent,
+		AlertComponent
 	],
 	imports: [
 		BrowserModule,
