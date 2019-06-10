@@ -22,7 +22,19 @@
 
 .full-height { min-height: 100vh; }
 
-// column flexbox
+
+// svg fill & stroke
+@mixin svg-fill-stroke($color) {
+	color: $color;
+	stroke: $color;
+	fill: $color;
+}
+
+
+/*****************************************************
+**** FLEXBOX
+******************************************************/
+// column flexbox; use justify-center by default
 .column-flex { 
 	display: flex;
 	flex-direction: column;
@@ -30,10 +42,7 @@
 	align-items: center;
 }
 
-
-// svg fill & stroke
-@mixin svg-fill-stroke($color) {
-	color: $color;
-	stroke: $color;
-	fill: $color;
+// normal flexbox 
+.flexbox {
+	display: flex;
 }

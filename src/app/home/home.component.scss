@@ -1,0 +1,22 @@
+// imports
+@import '~src/assets/scss/common';
+@import '~src/assets/scss/consts';
+
+
+// wrapper
+div.full-height {
+    // colors
+    background-color: $default-dark-bg;
+    color: $default-dark-color;
+    padding: 1em;
+
+
+    
+    // children
+    h2 {
+        color: #fff;        // use white for titles
+        margin: 0;
+        font-weight: 400;
+        line-height: 2em;
+    }
+}
