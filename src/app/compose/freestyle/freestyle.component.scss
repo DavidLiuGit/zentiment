@@ -4,42 +4,40 @@
 
 
 // constants
-$NOTEBOOK-LINE-COLOR: #E7EFF8;
-$NOTEBOOK-BORDER-RADIUS: 1em;
-$NOTEBOOK-LINE-HEIGHT: 2em;
-
+$FONT-SIZE: 1.25em;
 
 div.paper {
 	color: $default-dark-bg;	// in dark mode, use the default bg color as foreground
 
 	// sizing
-	min-width: 300px;
+	min-width: 150px;
 	width: 100%;
 	max-width: 80vw;
-	min-height: 16em;
-
 
 	// children
 	&>textarea {
-		color: $default-dark-bg;
+		transition: all 0.5s linear;
 
-		// sizing
-		resize: none;				// disable manual resizing
+		// text & typeface
+		color: $default-dark-color;
+		font-family: $default-font-family;
+		font-size: $FONT-SIZE;
+
+		// box
+		resize: none;
 		box-sizing: border-box;
 		width: 100%;
-		height: 100%;
-		padding: 2em; //$NOTEBOOK-BORDER-RADIUS;
+		padding: 1em;
+		height: 50vh;
 		border: none;
-		border-radius: $NOTEBOOK-BORDER-RADIUS;
+		// border-bottom: 1px solid $default-dark-color;
+		background: none;
 
-		// text
-		line-height: $NOTEBOOK-LINE-HEIGHT;
-		overflow: hidden;
-
-		// background
-		background-image: linear-gradient(
-			to bottom, transparent calc(#{$NOTEBOOK-LINE-HEIGHT} - 1px), $NOTEBOOK-LINE-COLOR 1px
-		);
-		background-size: 100% $NOTEBOOK-LINE-HEIGHT;
+		
+		// focused
+		&:focus {
+			outline: none;
+			// border-bottom: 1px solid $grad-color-3;
+		}
 	}
 }
