@@ -1,0 +1,45 @@
+// imports
+@import '~src/assets/scss/common';
+@import '~src/assets/scss/consts';
+
+
+// constants
+$NOTEBOOK-LINE-COLOR: #E7EFF8;
+$NOTEBOOK-BORDER-RADIUS: 1em;
+$NOTEBOOK-LINE-HEIGHT: 2em;
+
+
+div.paper {
+	color: $default-dark-bg;	// in dark mode, use the default bg color as foreground
+
+	// sizing
+	min-width: 300px;
+	width: 100%;
+	max-width: 80vw;
+	min-height: 16em;
+
+
+	// children
+	&>textarea {
+		color: $default-dark-bg;
+
+		// sizing
+		resize: none;				// disable manual resizing
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		padding: 2em; //$NOTEBOOK-BORDER-RADIUS;
+		border: none;
+		border-radius: $NOTEBOOK-BORDER-RADIUS;
+
+		// text
+		line-height: $NOTEBOOK-LINE-HEIGHT;
+		overflow: hidden;
+
+		// background
+		background-image: linear-gradient(
+			to bottom, transparent calc(#{$NOTEBOOK-LINE-HEIGHT} - 1px), $NOTEBOOK-LINE-COLOR 1px
+		);
+		background-size: 100% $NOTEBOOK-LINE-HEIGHT;
+	}
+}

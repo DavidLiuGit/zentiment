@@ -9,6 +9,8 @@ import { NotFoundComponent } from './not-found.component';
 import { SplashComponent } from './splash.component';
 import { HomeComponent } from './home/home.component';
 import { AlertComponent } from './utils/alert/alert.component';
+import { ComposeComponent } from './compose/compose.component';
+import { FreestyleComponent } from './compose/freestyle/freestyle.component';
 
 
 
@@ -19,6 +21,10 @@ const appRoutes = [
 	{ path: '', component: SplashComponent },
 	{ path: 'dashboard', component: HomeComponent },
 
+	// compose
+	{ path: 'compose', component: ComposeComponent,	},
+	{ path: 'compose/freestyle', component: FreestyleComponent },
+
 	// 404 not found
 	{ path: '404', component: NotFoundComponent },
 	{ path: '**', redirectTo: '404' },
@@ -28,11 +34,9 @@ const appRoutes = [
 
 @NgModule({
 	declarations: [
-		AppComponent,
-		NotFoundComponent,
-		SplashComponent,
+		AppComponent, NotFoundComponent, SplashComponent, AlertComponent,
 		HomeComponent,
-		AlertComponent
+		ComposeComponent, FreestyleComponent,
 	],
 	imports: [
 		BrowserModule,
