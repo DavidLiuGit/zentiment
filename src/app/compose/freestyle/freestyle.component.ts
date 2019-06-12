@@ -12,6 +12,7 @@ export class FreestyleComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
+		// focus on textbox automatically
 		this.textbox.nativeElement.focus();
 	}
 } 

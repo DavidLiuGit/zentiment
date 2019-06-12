@@ -1,5 +1,8 @@
+// module imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AutosizeModule } from 'ngx-autosize';
+
 
 // my imports
 import { AppComponent } from './app.component';
@@ -41,6 +44,7 @@ const appRoutes = [
 	imports: [
 		BrowserModule,
 		RouterModule.forRoot( appRoutes ),
+		AutosizeModule,		// used for auto-resizing textarea
 	],
 	providers: [
 		{ provide: RouteReuseStrategy, useClass: MaltsevRouteReuseStrategy },
