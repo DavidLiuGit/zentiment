@@ -20,7 +20,7 @@
 }
 
 
-.full-height { min-height: 100vh; }
+.full-height { min-height: 100vh; box-sizing: border-box; }
 
 
 // svg fill & stroke
@@ -53,3 +53,7 @@
 **** ELEMENT PROPERTIES
 ******************************************************/
 .pointer { cursor: pointer; }
+
+/*****************************************************
+**** TILE CAROUSEL
+******************************************************/
