@@ -25,9 +25,9 @@ Smart journal
 Zentiment uses a typically client-server-database architecture. The client-facing frontend is built on the [Angular](https://angular.io) framework. The server is built on the Flask framework for Python. The database is MongoDB, which the server will interface with.
 
 #### Server
-Install Flask, Flask-PyMongo with pip:
+Install Flask, Flask-PyMongo, Flask-Dance with pip:
 ```bash
-pip install -U Flask Flask-PyMongo
+pip install --user Flask Flask-PyMongo flask-dance
 ```
 
 
