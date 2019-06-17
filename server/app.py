@@ -3,6 +3,8 @@ from flask_pymongo import PyMongo
 from flask_cors import CORS
 
 import api
+# import api_logs
+from api_logs import app_logs
 from helper import *
 
 # app config
@@ -15,7 +17,13 @@ mongo = PyMongo(app)
 test_mongo_connection(mongo)		# test connection; raise exception if failed
 
 
-# Register blueprints to app
+
+##### Register blueprints to app
+
+# logs api handler
+LOGS_PATH_PREFIX = "/logs"		# should match with path in LogsHttpService (frontend) 
+app.register_blueprint(app_logs, url_prefix=LOGS_PATH_PREFIX)
+
+
+# Run app
 app.run()
-
-
