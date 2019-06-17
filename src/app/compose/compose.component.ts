@@ -10,4 +10,4 @@ export class ComposeComponent implements OnInit {
 
 	ngOnInit() {
 	}
-} 
+}

@@ -8,7 +8,7 @@ $TEXTAREA-FONT-SIZE: 1.25em;
 
 h2.title {
 	font-weight: 300;
-	font-size: 2.25em;
+	font-size: 2.5em;
 }
 
 div.paper {
@@ -32,7 +32,7 @@ div.paper {
 		box-sizing: border-box;
 		width: 100%;
 		margin: 1em auto;
-		height: 50vh;
+		min-height: 50vh;
 		border: none;
 		background: none;
 
@@ -42,5 +42,21 @@ div.paper {
 			outline: none;
 			// border-bottom: 1px solid $grad-color-3;
 		}
+	}
+}
+
+button {
+	color: $default-dark-color;
+	background: none;
+	border: 1px solid $default-dark-color;
+	padding: 0.25em 1.5em;
+	font-size: 1.5em;
+	font-weight: 300;
+
+	transition: all 0.25s ease-in-out;
+
+	&:hover {
+		border: 1px solid $default-dark-title-color;
+		box-shadow: 0 0 8px 0px $default-dark-title-color;
 	}
 }
