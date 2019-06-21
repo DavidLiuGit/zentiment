@@ -6,9 +6,13 @@
 	<!-- navigation tiles -->
 	<div class="tile-container flexbox">
 
-		<div>
-			<a routerLink="/compose">Write</a>
-		</div>
+		<!-- tile -->
+		<ng-container 
+			*ngFor="let tile of tileList; index as i;">
+			<div class="nav-tile">
+				<h2>{{tile.title}}</h2>
+			</div>
+		</ng-container>
 
 
 	</div>
