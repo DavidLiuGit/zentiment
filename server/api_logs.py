@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, g
 from pprint import pprint
 
 
@@ -9,15 +9,17 @@ app_logs = Blueprint ( 'app_logs', __name__ )
 
 
 # save new log
-@app_logs.route('new')
+@app_logs.route('new', methods=['POST'])
 def new_log ():
-	pprint(request.headers)
+	pprint(request.json)
+	print(g.db_int.db_uri)
 	
-	resp = jsonify({})
+	# echo back
+	resp = jsonify(request.json)
 	resp.status_code = 200
 	return resp
 
 
 
 
-print("api_logs warmed up!")
+print("Blueprint: api_logs warmed up!")
