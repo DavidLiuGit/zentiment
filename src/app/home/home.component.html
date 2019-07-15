@@ -3,18 +3,6 @@
 	<h2 class="greeting">Hello {{name}}.</h2>
 
 
-	<!-- navigation tiles -->
-	<div class="tile-container flexbox">
-
-		<!-- tile -->
-		<ng-container 
-			*ngFor="let tile of tileList; index as i;">
-			<div class="nav-tile">
-				<h2>{{tile.title}}</h2>
-			</div>
-		</ng-container>
-
-
-	</div>
+	<nav-tiles [config]="config" [tileList]="tileList"></nav-tiles>
 	
 </div>

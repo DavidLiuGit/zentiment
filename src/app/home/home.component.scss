@@ -22,18 +22,3 @@ div.full-height {
 }
 
 
-// navigation tiles
-div.tile-container {
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-    // children
-    div.nav-tile {
-        min-width: 15em;
-        text-align: center;
-        border: 1px solid white;
-        margin: 1em;
-        min-width: 40%;
-        flex: 1 0;
-    }
-}

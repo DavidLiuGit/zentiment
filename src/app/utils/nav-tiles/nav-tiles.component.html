@@ -1,0 +1,12 @@
+	<div class="tile-container flexbox">
+
+		<!-- individual tiles -->
+		<ng-container 
+			*ngFor="let tile of tileList; index as i;">
+			<div class="nav-tile" [routerLink]="tile.path">
+				<h2>{{tile.title}}</h2>
+			</div>
+		</ng-container>
+
+
+	</div>

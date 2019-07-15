@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { AlertComponent } from './utils/alert/alert.component';
 import { ComposeComponent } from './compose/compose.component';
 import { FreestyleComponent } from './compose/freestyle/freestyle.component';
+import { NavTilesComponent } from './utils/nav-tiles/nav-tiles.component';
 
 
 
@@ -40,6 +41,7 @@ const appRoutes = [
 		AppComponent, NotFoundComponent, SplashComponent, AlertComponent,
 		HomeComponent,
 		ComposeComponent, FreestyleComponent,
+		NavTilesComponent,
 	],
 	imports: [
 		BrowserModule,
