@@ -9,12 +9,18 @@ div.tile-container {
     flex-wrap: wrap;
 
     // children
-    div.nav-tile {
+    .nav-tile {
         min-width: 15em;
         text-align: center;
         border: 1px solid white;
         margin: 1em;
         min-width: 40%;
         flex: 1 0;
+        cursor: pointer;
+    }
+
+    .nav-tile.disabled {
+        pointer-events: none;
+        cursor: default;
     }
 }

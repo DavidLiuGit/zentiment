@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavTilesComponent implements OnInit {
 	// inputs
 	@Input() config:	NavTilesConfig;		// tile container settings
-	@Input() tileList:	NavigationTile[];	// tiles to display
+	@Input() tileList:	NavTile[];	// tiles to display
 
 	ngOnInit(){}
 }
@@ -18,33 +18,19 @@ export class NavTilesComponent implements OnInit {
 /**
  * Navitation tile container configuration
  */
-export class NavTilesConfig {
+export interface NavTilesConfig {
 
-	constructor ( config: NavTilesConfig ) {
-		// read in configuration
-		for (let p in config)
-			this[p] = config[p];
-	}
 }
 
 
 
-/**
- * Instances of this class defines navigation tiles
- */
-export class NavigationTile {
-	title:	string;		// tile title
-	path:	string;		// redirect path
-	text?:	string;		// description (optional)
-	svgId?:	string;		// optionally provide svg ID to display
+export interface NavTile {
+	title:		string;
+	path:		string;
+	text?:		string;		// optional; 
+	svgId?:		string;
 
 	// enable & show
-	enable?:boolean = true;
-	show?:boolean	= true;
-
-	constructor ( config: NavigationTile ) {
-		// read in configuration
-		for (let p in config)
-			this[p] = config[p];
-	}
+	disable?:	boolean;	// if true, do not allow click
+	hide?:		boolean;	// if true, do not show
 }

@@ -3,7 +3,11 @@
 		<!-- individual tiles -->
 		<ng-container 
 			*ngFor="let tile of tileList; index as i;">
-			<div class="nav-tile" [routerLink]="tile.path">
+			<div class="nav-tile"
+				*ngIf="!tile.hide"
+				[routerLink]="tile.path"
+				[class.disabled]="!!tile.disable"
+				>
 				<h2>{{tile.title}}</h2>
 			</div>
 		</ng-container>

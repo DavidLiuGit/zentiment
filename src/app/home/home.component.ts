@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavTilesConfig, NavigationTile } from '../utils/nav-tiles/nav-tiles.component';
+import { NavTilesConfig, NavTile } from '../utils/nav-tiles/nav-tiles.component';
 
 @Component({
 	selector: 'app-home',
@@ -12,18 +12,17 @@ export class HomeComponent implements OnInit {
 
 
 	// navigation tiles
-	tileConfig:	NavTilesConfig = new NavTilesConfig({});
-	tileList:	NavigationTile[] = [
-		new NavigationTile({ title: "Compose", path: "/compose" }),
-		new NavigationTile({ title: "Browse", path: "/browse" }),
-		new NavigationTile({ title: "Search", path: "/search" }),
-		new NavigationTile({ title: "Analytics", path: "/analytics" }),
+	tileConfig:	NavTilesConfig = {};
+	tileList:	NavTile[] = [
+		{ title: "Compose", path: "/compose" },
+		{ title: "Browse", path: "/browse", disable: true },
+		{ title: "Search", path: "/search", disable: true },
+		{ title: "Analytics", path: "/analytics", disable:true, hide:true },
 	];
 
 	constructor() { }
 
 	ngOnInit() {
-		console.warn (this.tileList);
 	}
 
 }
