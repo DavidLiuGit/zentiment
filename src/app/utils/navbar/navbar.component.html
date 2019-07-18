@@ -1,0 +1,26 @@
+<div class="sidebar" [class.sidebar-hidden]="sidebarHidden">
+	<ul>
+
+		<!-- toggle the sidebar -->
+		<li (click)="toggleSidebar()" class="hide-on-large">
+			<svg *ngIf="sidebarHidden"><use [attr.href]="svgBaseHref + 'i-menu'"></use></svg>
+			<svg *ngIf="!sidebarHidden"><use [attr.href]="svgBaseHref + 'i-close'"></use></svg>
+			&nbsp;
+		</li>
+
+		<!-- title; will be hidden for medium & small screens -->
+		<li class="hide-on-medium">
+			<span>
+				<strong>{{title}}</strong>
+			</span>
+		</li>
+
+		<ng-container *ngFor="let link of links">
+			<li (click)="linkClickhandler(link)">
+				<svg><use [attr.href]="svgBaseHref + link.icon"></use></svg>
+				<span>&nbsp;{{link.title}}</span>
+			</li>
+		</ng-container>
+
+	</ul>
+</div>
