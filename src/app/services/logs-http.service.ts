@@ -2,6 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -13,7 +14,17 @@ export class LogsHttpService extends HttpService {
 	path:	string = "/logs";		// relative API path; appended to base_api_url
 
 
-	constructor () {
-		super();
+	constructor (
+		protected http: HttpClient,
+	) {
+		super(http);
+	}
+
+
+	/**
+	 * newLog
+	 */
+	public newLog() {
+		
 	}
 }

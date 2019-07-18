@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AutosizeModule } from 'ngx-autosize';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 // my imports
@@ -15,6 +16,7 @@ import { AlertComponent } from './utils/alert/alert.component';
 import { ComposeComponent } from './compose/compose.component';
 import { FreestyleComponent } from './compose/freestyle/freestyle.component';
 import { NavTilesComponent } from './utils/nav-tiles/nav-tiles.component';
+import { ErrorInterceptor } from './utils/http-error.interceptor';
 
 
 
@@ -47,9 +49,11 @@ const appRoutes = [
 		BrowserModule,
 		RouterModule.forRoot( appRoutes ),
 		AutosizeModule,		// used for auto-resizing textarea
+		HttpClientModule,
 	],
 	providers: [
 		{ provide: RouteReuseStrategy, useClass: MaltsevRouteReuseStrategy },
+		{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 	],
 	bootstrap: [AppComponent]
 })
