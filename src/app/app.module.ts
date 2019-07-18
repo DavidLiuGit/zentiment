@@ -17,6 +17,7 @@ import { ComposeComponent } from './compose/compose.component';
 import { FreestyleComponent } from './compose/freestyle/freestyle.component';
 import { NavTilesComponent } from './utils/nav-tiles/nav-tiles.component';
 import { ErrorInterceptor } from './utils/http-error.interceptor';
+import { NavbarComponent } from './utils/navbar/navbar.component';
 
 
 
@@ -44,6 +45,7 @@ const appRoutes = [
 		HomeComponent,
 		ComposeComponent, FreestyleComponent,
 		NavTilesComponent,
+		NavbarComponent,
 	],
 	imports: [
 		BrowserModule,
