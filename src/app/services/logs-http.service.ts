@@ -3,6 +3,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http.service';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -22,9 +23,10 @@ export class LogsHttpService extends HttpService {
 
 
 	/**
-	 * newLog
+	 * Save a new log
 	 */
-	public newLog() {
-		
+	public newLog (entry: string) : Observable<Object> {
+		let url: string = `${this.api_url}${this.path}/new`;
+		return this.http.post(url, entry);
 	}
 }

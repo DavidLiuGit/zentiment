@@ -28,5 +28,11 @@ export class FreestyleComponent implements OnInit, AfterViewInit {
 
 	saveBtnClicked () {
 		console.log ( this.textbox.nativeElement.value );
+		this.logsHttp.newLog (this.textbox.nativeElement.value).subscribe(
+			data => {
+				console.log(data);
+				this.alert.success("New log saved successfully!");
+			}
+		)
 	}
 } 

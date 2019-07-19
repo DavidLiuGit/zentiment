@@ -22,8 +22,8 @@ export class HttpService {
 	 * Ping the ReST API server
 	 */
 	public ping() {
-		let path: string = "/path";
-		this.http.get (path).subscribe(
+		let path: string = "/ping";
+		this.http.get (`${this.api_url}${path}`).subscribe(
 			data => console.log(data),
 			err => console.warn("running custom error handler"),
 		);
