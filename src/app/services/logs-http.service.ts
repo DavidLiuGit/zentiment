@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 export class LogsHttpService extends HttpService {
 
 	// properties & consts
-	path:	string = "/logs";		// relative API path; appended to base_api_url
+	path:	string = "logs";		// relative API path; appended to base_api_url
+	user:	string = "user";
 
 
 	constructor (
@@ -26,7 +27,7 @@ export class LogsHttpService extends HttpService {
 	 * Save a new log
 	 */
 	public newLog (entry: string) : Observable<Object> {
-		let url: string = `${this.api_url}${this.path}/new`;
-		return this.http.post(url, entry);
+		let url: string = `${this.api_url}/${this.path}/${this.user}/new`;
+		return this.http.post(url, {entry: entry});
 	}
 }

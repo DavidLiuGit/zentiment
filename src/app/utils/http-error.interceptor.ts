@@ -26,12 +26,17 @@ export class ErrorInterceptor implements HttpInterceptor {
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		return next.handle(request).pipe(catchError(err => {
 
+			console.error(err);
 			if ( err.status == 0 ) {
 				this.alert.error ( "Could not connect to server. Either the server or your Internet connection is down." );
 			}
 
 			if ( err.status == 404 ) {
-				this.alert.warning ( "404: not found." );
+				this.alert.warning ( "Could not contact server. Either the server or your Internet connection is down." );
+			}
+
+			if ( err.status >= 500 ) {
+				this.alert.error ( "A server error was encountered. Reporting to the idiot developers now." );
 			}
 
 			// do not apply this logic to requests from 'accounts' family (login, register, etc.)
