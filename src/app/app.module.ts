@@ -18,6 +18,7 @@ import { FreestyleComponent } from './compose/freestyle/freestyle.component';
 import { NavTilesComponent } from './utils/nav-tiles/nav-tiles.component';
 import { ErrorInterceptor } from './utils/http-error.interceptor';
 import { NavbarComponent } from './utils/navbar/navbar.component';
+import { BrowseComponent } from './browse/browse.component';
 
 
 
@@ -31,6 +32,9 @@ const appRoutes = [
 	// compose
 	{ path: 'compose', component: ComposeComponent,	},
 	{ path: 'compose/freestyle', component: FreestyleComponent },
+
+	// browse
+	{ path: 'browse', component: BrowseComponent },
 
 	// 404 not found
 	{ path: '404', component: NotFoundComponent },
@@ -46,6 +50,7 @@ const appRoutes = [
 		ComposeComponent, FreestyleComponent,
 		NavTilesComponent,
 		NavbarComponent,
+		BrowseComponent,
 	],
 	imports: [
 		BrowserModule,

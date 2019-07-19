@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 	tileConfig:	NavTilesConfig = {};
 	tileList:	NavTile[] = [
 		{ title: "Compose", path: "/compose" },
-		{ title: "Browse", path: "/browse", disable: true },
+		{ title: "Browse", path: "/browse" },
 		{ title: "Search", path: "/search", disable: true },
 		{ title: "Analytics", path: "/analytics", disable:true, hide:true },
 	];
