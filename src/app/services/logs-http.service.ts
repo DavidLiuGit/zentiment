@@ -13,7 +13,7 @@ export class LogsHttpService extends HttpService {
 
 	// properties & consts
 	path:	string = "logs";		// relative API path; appended to base_api_url
-	user:	string = "user";
+	user:	string = "allah";
 
 
 	constructor (

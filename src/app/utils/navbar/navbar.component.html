@@ -2,8 +2,8 @@
 	<ul>
 
 		<!-- toggle the sidebar -->
-		<li (click)="toggleSidebar()" class="hide-on-large">
-			<svg *ngIf="sidebarHidden"><use [attr.href]="svgBaseHref + 'i-menu'"></use></svg>
+		<li (click)="toggleSidebar()" class="toggle">
+			<svg *ngIf="sidebarHidden" class="open-sidebar"><use [attr.href]="svgBaseHref + 'i-menu'"></use></svg>
 			<svg *ngIf="!sidebarHidden"><use [attr.href]="svgBaseHref + 'i-close'"></use></svg>
 			&nbsp;
 		</li>
@@ -15,6 +15,7 @@
 			</span>
 		</li>
 
+		<!-- iterate over list of links -->
 		<ng-container *ngFor="let link of links">
 			<li (click)="linkClickhandler(link)">
 				<svg><use [attr.href]="svgBaseHref + link.icon"></use></svg>

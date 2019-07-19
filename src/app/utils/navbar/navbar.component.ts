@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 	styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-	sidebarHidden: boolean		= false;
-	title: string				= "Zentiment";
-	svgBaseHref: string			= "assets/icons/bytesize.svg#";
+	// navbar configuration
+	sidebarHidden: boolean		= true;							// set default value here
+	title: string				= "Zentiment";					// title to display in navbar
+	svgBaseHref: string			= "assets/icons/bytesize.svg#";	// icons will be loaded from here
 
 	@Input() links: NavbarLink[];
 

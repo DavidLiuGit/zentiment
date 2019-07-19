@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavTile, NavTilesConfig } from '../utils/nav-tiles/nav-tiles.component';
 
 
 @Component({
@@ -9,4 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class BrowseComponent implements OnInit {
 	constructor(){}
 	ngOnInit(){}
+	
+	// navigation tiles config
+	navConfig: NavTilesConfig = {};
+	navTiles: NavTile[] = [
+		{ title: "Entries", path: "entries" },
+		{ title: "Tags", path: "tags" },
+	]
 }

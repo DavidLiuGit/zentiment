@@ -3,13 +3,14 @@
 @import '~src/assets/scss/consts';
 
 
+// small screens first
 .sidebar {
-	// position: fixed; /* Stay in place */
+	position: fixed; /* Stay in place */
 	background-color: black;
 	width: 14em;
 	height: 100vh;
 	top: 4em;
-	// z-index: 10;		/* stay on top */
+	z-index: 10;		/* stay on top */
 	top: 0;
 	left: 0;
 	overflow-x: hidden; /* Disable horizontal scroll */
@@ -39,11 +40,16 @@
 			max-height: 1.5em;
 			cursor: pointer;
 
+
 			// children
 			svg {
 				width: 1em;
 				height: 1em;
 				stroke-width: 2;
+				&.open-sidebar {
+					position: fixed;
+					z-index: 10;
+				}
 			}
 			span {
 				line-height: 1em;
@@ -52,8 +58,47 @@
 			// hover
 			&:hover {
 				color: #fff;
+				background: $grad-color-1;			// fallback for old browsers
+				background: -webkit-linear-gradient(to right, $grad-color-1, $grad-color-2, $grad-color-3);
+				background: linear-gradient(to right, $grad-color-1, $grad-color-2, $grad-color-3);
 			}
 		}
 	}
 	
+
+	// when sidebar hidden/minimized
+	&.sidebar-hidden {
+		width: 0;
+		li > span {
+			display: none;
+		}
+	}
+}
+
+
+// medium sized screens: collapse when hidden
+@media screen and (min-width:$small-screen-width) and (max-width:$large-screen-width) {
+	.sidebar {
+		position: static;
+		z-index: 0;
+		&.sidebar-hidden { width: 3em; }		/* show only icons */
+	}
+}
+
+// large screens: show larger icons when hidden
+@media screen and (min-width:$large-screen-width) {
+	.sidebar {
+		position: static;
+		z-index: 0;
+		&.sidebar-hidden {
+			width: 3.5em;
+			&>ul>li {
+				max-height: 2.5em;
+				&>svg {
+					width: 1.5em;
+					height: 1.5em;
+				}
+			} 
+		}		
+	}
 }

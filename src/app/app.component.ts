@@ -18,6 +18,7 @@ export class AppComponent {
 	navbarLinks: NavbarLink[] = [
 		{ title: "Dashboard", routerLink: "/dashboard", icon: "i-home" },
 		{ title: "Compose", routerLink: "/compose", icon: "i-compose"},
+		{ title: "Browse", routerLink: "/browse", icon: "i-folder-open" },
 		// { title: "Ext", icon: '', externalLink: "http://google.com" },
 		{ 
 			title: "???", icon: 'i-warning', 
