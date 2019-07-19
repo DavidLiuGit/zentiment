@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AlertService } from '../alert.service';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-navbar',
@@ -13,20 +13,11 @@ export class NavbarComponent implements OnInit {
 	title: string				= "Zentiment";
 	svgBaseHref: string			= "assets/icons/bytesize.svg#";
 
-	links: NavbarLink[]			= [
-		{ title: "Home", routerLink: "/", icon: "i-home" },
-		{ title: "Compose", icon: "i-compose", routerLink: "/compose"},
-		// { title: "Ext", icon: '', externalLink: "http://google.com" },
-		{ 
-			title: "???", icon: 'i-warning', 
-			clickCallback: () => this.fuckMyShitUp()
-		},
-
-	]
+	@Input() links: NavbarLink[];
 
 
 	constructor(
-		private alert: AlertService,
+		// private alert: AlertService,
 		private router: Router,
 	) {}
 
@@ -47,30 +38,6 @@ export class NavbarComponent implements OnInit {
 		// otherwise, toggle it
 		else
 			this.sidebarHidden = !this.sidebarHidden;
-	}
-
-
-
-	/**
-	 * Inject Ooer CSS
-	 */
-	fuckMyShitUp(){
-		console.log ("Pls to halp!");
-		this.alert.error("Pls to halp!", true);
-
-		// inject Ooer CSS
-		var cssId = 'myCss';
-		if (!document.getElementById(cssId))
-		{
-			var head  = document.getElementsByTagName('head')[0];
-			var link  = document.createElement('link');
-			link.id   = cssId;
-			link.rel  = 'stylesheet';
-			link.type = 'text/css';
-			link.href = 'assets/kek/ooo3.css';
-			link.media = 'all';
-			head.appendChild(link);
-		}
 	}
 
 

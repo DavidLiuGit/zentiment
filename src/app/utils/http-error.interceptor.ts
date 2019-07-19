@@ -31,11 +31,11 @@ export class ErrorInterceptor implements HttpInterceptor {
 				this.alert.error ( "Could not connect to server. Either the server or your Internet connection is down." );
 			}
 
-			if ( err.status == 404 ) {
+			else if ( err.status == 404 ) {
 				this.alert.warning ( "Could not contact server. Either the server or your Internet connection is down." );
 			}
 
-			if ( err.status >= 500 ) {
+			else if ( err.status >= 500 ) {
 				this.alert.error ( "A server error was encountered. Reporting to the idiot developers now." );
 			}
 
