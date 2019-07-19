@@ -1,4 +1,4 @@
-from flask import Flask, g
+from flask import Flask, g, jsonify
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 
@@ -19,17 +19,21 @@ MONGO_URI = "mongodb://localhost:27017/test"
 with app.app_context():
 	db_interface = MongoInterface(MONGO_URI)		# instantiate MongoDB interface
 	app.config["MONGO_URI"] = MONGO_URI				# add base MongoDB URI to config
-	# db_interface.db.init_app(app)					# specific to MongoDB
-	# g.db_int = db_interface							# register to g
-	# print("Database initialized")
 
 
 
-	##### Register blueprints to app
+##### Register blueprints to app
 
-	# logs api handler
-	LOGS_PATH_PREFIX = "/logs"		# should match with path in LogsHttpService (frontend) 
-	app.register_blueprint(app_logs, url_prefix=LOGS_PATH_PREFIX)
+# logs api handler
+LOGS_PATH_PREFIX = "/api/logs"		# should match with path in LogsHttpService (frontend) 
+app.register_blueprint(app_logs, url_prefix=LOGS_PATH_PREFIX)
+
+
+
+# define a ping handler
+@app.route('/api/ping')
+def ping():
+	return jsonify()
 
 
 # Run app
