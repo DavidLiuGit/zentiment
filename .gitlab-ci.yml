@@ -13,11 +13,13 @@ before_script:
 
 # this stage will compile the Angular client, 
 build:
+  stage: build
   script:
     - docker build -t my-docker-image .
     - docker run my-docker-image /script/to/run/tests
 
 
 push:
+  stage: push
   script:
     - pwd
