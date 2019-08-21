@@ -30,4 +30,14 @@ export class LogsHttpService extends HttpService {
 		let url: string = `${this.api_url}/${this.path}/${this.user}/new`;
 		return this.http.post(url, {entry: entry});
 	}
+
+
+	/**
+	 * Get list of log entries on by the current user on the specified date
+	 * @param date date as a string; yyyy-mm-dd format
+	 */
+	public getLogsByDate (date: string) : Observable<Object> {
+		let url: string = `${this.api_url}/${this.path}/${this.user}/get_by_date/${date}`;
+		return this.http.get(url);
+	}
 }
