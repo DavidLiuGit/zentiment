@@ -7,7 +7,8 @@ FROM node:latest AS frontend-builder
 
 WORKDIR /app
 COPY . .
-RUN npm install && npm run build -- --prod
+RUN npm install 
+RUN npm run build -- --prod
 
 
 
