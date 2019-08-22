@@ -1,6 +1,6 @@
 # this image will be used to build the frontend and prep it for deployment
 # use NodeJS as the base image for the build & test step
-FROM node:latest AS frontend-builder
+FROM node:10.16.3-alpine AS frontend-builder
 
 #
 # ARG $build_target=production
