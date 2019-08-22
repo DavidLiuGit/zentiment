@@ -7,8 +7,8 @@ stages:
 
 
 
-before_script:
-  - docker info
+# before_script:
+  # - docker info
 
 
 # this stage will compile the Angular client, 
