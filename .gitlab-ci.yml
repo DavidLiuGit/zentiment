@@ -1,6 +1,14 @@
 image: docker:18
 
 
+# cache node_modules directory
+cache:
+  key: "$CI_BUILD_REF_NAME node:10.16.3-alpine"
+  paths:
+  - node_modules/
+
+
+
 stages:
   - build
   - push
@@ -15,13 +23,17 @@ stages:
 build:
   stage: build
   script:
-    - docker build -t zentiment-client .
-    - docker run -dPi zentiment-client
+    - docker build -t zentiment-client:latest .
+    - docker run -dPi zentiment-client:latest
+    - docker push dvdgege5/zentiment:latest
   tags:
     - docker
 
 
+
+# this stage pushes the necessary containers to production server
 push:
   stage: push
   script:
     - pwd
+    - docker pull dvdgege5/zentiment:latest
