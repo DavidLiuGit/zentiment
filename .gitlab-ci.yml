@@ -24,18 +24,16 @@ build:
   stage: build
   script:
     - docker build -t registry.gitlab.com/davidliugit/zentiment .
-    # - docker run -dPi zentiment-client:latest
-    # - docker push dvdgege5/zentiment:latest
     - docker push registry.gitlab.com/davidliugit/zentiment
   tags:
     - docker
 
 
 
-# this stage pushes the necessary containers to production server
+# this stage pushes the necessary containers to server
 push:
   stage: push
   script:
-    - pwd
+    - ssh allah@159.89.182.50
     - docker pull registry.gitlab.com/davidliugit/zentiment
-    # - docker pull dvdgege5/zentiment:latest
+    - hostname
