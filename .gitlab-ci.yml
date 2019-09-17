@@ -34,6 +34,7 @@ build:
 push:
   stage: push
   script:
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
     - ssh allah@159.89.182.50
     - docker pull registry.gitlab.com/davidliugit/zentiment
     - hostname
